@@ -1,0 +1,8 @@
+{
+  "name": "Kowshalya Gopinaidu Asokan — Senior Frontend Engineer",
+  "short_name": "Kowshalya Asokan",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }],
+  "theme_color": "#050508",
+  "background_color": "#050508",
+  "display": "standalone"
+}

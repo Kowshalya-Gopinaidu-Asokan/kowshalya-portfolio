@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* This site uses a single, permanent dark theme (no light mode switch),
+   so every component can safely assume a dark background. */
+:root {
+  color-scheme: dark;
+}
+
+/* Native smooth scrolling, no third-party scroll library, so anchor
+   navigation and scrollIntoView() calls always behave predictably. */
+html {
+  scroll-behavior: smooth;
+  /* Slightly larger than the browser default (16px) so every rem-based
+     Tailwind text utility across the site reads a touch bigger. */
+  font-size: 17.5px;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-ink-950 text-white antialiased;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Skip link, visible only on keyboard focus */
+.skip-link {
+  @apply fixed left-4 top-4 z-[999] -translate-y-24 rounded-full bg-white px-5 py-3 font-semibold text-ink-950 opacity-0 transition-transform focus:translate-y-0 focus:opacity-100;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #7c3aed, #06b6d4);
+  border-radius: 999px;
+}
+
+/* Selection */
+::selection {
+  background: #7c3aed;
+  color: white;
+}
+
+/* Focus visibility for a11y, never remove outlines silently */
+:focus-visible {
+  outline: 2px solid #06b6d4;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.text-gradient {
+  @apply bg-aurora-gradient bg-[length:200%_200%] bg-clip-text text-transparent animate-gradient-shift;
+}
+
+.glass {
+  @apply border border-white/10 bg-white/[0.06] backdrop-blur-xl;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
