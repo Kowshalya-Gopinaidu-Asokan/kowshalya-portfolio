@@ -8,6 +8,6 @@ I'm passionate about creating scalable React applications, intuitive user interf
 
 Feel free to explore my projects, learn more about my journey, and connect with me for opportunities or collaborations.
 
-Link : 
+Link : https://kowshalya-portfolio.netlify.app/
 
 Thank you for visiting my portfolio!
